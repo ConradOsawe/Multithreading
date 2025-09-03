@@ -1,10 +1,17 @@
+// Runnable interface to implement concurrency
 public class RunnableDemo {
     public static void main(String[] s) {
         Thread one = new Thread(new ThreadOne());
         Thread two = new Thread(new ThreadTwo());
+        Thread three = new Thread(() -> {
 
+            for (int i = 0; i < 15; i++) {
+                System.out.println("Thread Three : " + i);
+            }
+        });
         one.start();
         two.start();
+        three.start();
     }
 }
 
