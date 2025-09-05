@@ -12,6 +12,7 @@ public class JoinThread {
             }
         });
 
+        System.out.println("Before executing threads...");
         one.start();
         two.start();
         one.join();
