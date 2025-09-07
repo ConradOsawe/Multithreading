@@ -25,3 +25,18 @@
   (T-Thread) --------->
 
   - The join keyword might not always be the better intuitive at first for this kind of operation it's doing. Somewhat better terms could have been .waitForcompletion() or .completeThenContinue().
+
+  ### Daemon and User Threads
+
+  **On the basis of surface of execution, threads can be of two types**
+
+  - Daemon Threads
+  - User Threads
+
+  \*_When a java program starts the main thread (main() method thread) starts running immediately. We can start child threads from the main thread. The main thread is the last thread to finish execution in normal circumstances, because it has to perform various shutdown operations._
+
+  \*_Daemon threads are intended to be helper threads which can run in background and are of low priority. Eg GC thread_
+
+  \*_Daemon threads are terminated by the JVM when all other user threads are terminated (done with their execution)_
+
+  \*_So, under normal circumstances, user threads are allowed to terminate once they are done with execution, however, the daemon threads are shutdown by JVM once the other threads are done executing._
