@@ -7,5 +7,8 @@ public class WaitAndNotify {
         Thread two = new Thread(() -> {
 
         });
+
+        one.start();
+        two.start();
     }
 }
