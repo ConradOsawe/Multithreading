@@ -14,4 +14,12 @@ public class WaitAndNotify {
         one.start();
         two.start();
     }
+
+    private static void one() throws InterruptedException {
+        synchronized (LOCK) {
+            System.out.println("Hello from method one ... ");
+            LOCK.wait();
+            System.out.println("Back again in the method one");
+        }
+    }
 }
