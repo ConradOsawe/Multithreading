@@ -22,4 +22,10 @@ public class WaitAndNotify {
             System.out.println("Back again in the method one");
         }
     }
+
+    private static void two() throws InterruptedException {
+        synchronized (LOCK) {
+            System.out.println("Hello from method two ...");
+        }
+    }
 }
