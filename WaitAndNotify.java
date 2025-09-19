@@ -26,6 +26,8 @@ public class WaitAndNotify {
     private static void two() throws InterruptedException {
         synchronized (LOCK) {
             System.out.println("Hello from method two ...");
+            LOCK.notify();
+            System.out.println("Hello from method two even after notifying ...");
         }
     }
 }
