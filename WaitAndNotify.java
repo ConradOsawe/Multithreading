@@ -4,10 +4,20 @@ public class WaitAndNotify {
 
     public static void main(String[] args) {
         Thread one = new Thread(() -> {
+            try {
+                one();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
         });
 
         Thread two = new Thread(() -> {
+            try {
+                two();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
         });
 
