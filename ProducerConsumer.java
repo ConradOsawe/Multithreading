@@ -15,7 +15,19 @@ public class ProducerConsumer {
         }
 
         public void produce() {
-
+            synchronized (lock) {
+                while (true) {
+                    if (container.size() == top) {
+                        System.out.println("Container full waiting for items to be removed ...");
+                        lock.wait();
+                    } else {
+                        System.out.println(sequence + " Added to the container");
+                        container.add(sequence++);
+                        lock.notify();
+                    }
+                    Thread.sleep(500);
+                }
+            }
         }
 
         public void consumer() {
