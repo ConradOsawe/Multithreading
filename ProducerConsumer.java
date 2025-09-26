@@ -18,7 +18,7 @@ public class ProducerConsumer {
             synchronized (lock) {
                 while (true) {
                     if (container.size() == top) {
-                        System.out.println("Container full waiting for items to be removed ...");
+                        System.out.println("Container full waiting for items to be removed ....");
                         lock.wait();
                     } else {
                         System.out.println(sequence + " Added to the container");
