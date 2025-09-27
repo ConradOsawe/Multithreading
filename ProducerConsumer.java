@@ -30,8 +30,19 @@ public class ProducerConsumer {
             }
         }
 
-        public void consumer() {
-
+        public void consumer() throws InterruptedException {
+            synchronized (lock) {
+                while (true) {
+                    if (container.size() == bottom) {
+                        System.out.println("Container empty, waiting for items to be added ...");
+                        lock.wait();
+                    } else {
+                        System.out.println(container.removeFirst() + " removed from the container");
+                        lock.notify();
+                    }
+                    Thread.sleep(500);
+                }
+            }
         }
     }
 }
