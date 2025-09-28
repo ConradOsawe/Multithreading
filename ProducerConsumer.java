@@ -34,7 +34,7 @@ public class ProducerConsumer {
             synchronized (lock) {
                 while (true) {
                     if (container.size() == bottom) {
-                        System.out.println("Container empty, waiting for items to be added ...");
+                        System.out.println("Container empty, waiting for items to be added ....");
                         lock.wait();
                     } else {
                         System.out.println(container.removeFirst() + " removed from the container");
