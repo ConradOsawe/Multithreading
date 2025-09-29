@@ -1,6 +1,10 @@
 import java.util.*;
 
 public class ProducerConsumer {
+    public static void main(String[] args) {
+
+    }
+
     class Worker {
 
         private int sequence = 0;
